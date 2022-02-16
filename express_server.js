@@ -5,7 +5,7 @@ let helpers = require('./helpers');
 
 const randomstring = require("randomstring");
 const app = express();
-const PORT = 8085;
+const PORT = process.env.PORT || 8085;
 
 app.set("view engine", "ejs");
 const bodyParser = require("body-parser");
