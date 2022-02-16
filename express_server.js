@@ -48,7 +48,7 @@ const users = {
 
 
 app.get("/", (req, res) => {
-  const templateVars = {user: ''};
+  const templateVars = {user: helpers.findUserObject(req.session.user_id, users)}
   res.render("home", templateVars);
 });
 
@@ -63,20 +63,21 @@ app.get("/hello", (req, res) => {
 });
 app.get("/urls",(req, res) => {
 
-  if(req.session.user_id){
+  if(typeof req.session.user_id != null){
     if (!helpers.findUserObject(req.session.user_id, users)){
       console.log('Clearing invalid sessions/cookies');
       req.session = null;
       res.redirect("/login");
     }
-
-    const templateVars ={
-      urls: helpers.urlsForUser(req.session.user_id, urlDatabase),
-      user: helpers.findUserObject(req.session.user_id, users),
-    };
-    
-    console.log(users);
-    res.render("urls_index", templateVars);
+    else{
+      const templateVars ={
+        urls: helpers.urlsForUser(req.session.user_id, urlDatabase),
+        user: helpers.findUserObject(req.session.user_id, users),
+      };
+      
+      console.log(users);
+      res.render("urls_index", templateVars);
+    }
 }
 else{
   res.redirect("/login");
@@ -88,7 +89,7 @@ app.get("/urls/new", (req, res) => {
     res.render("urls_new", templateVars);
   }
   else{
-     res.redirect("/login");
+      res.redirect("/login");
   }
 });
 

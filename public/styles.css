@@ -12,6 +12,12 @@
     align-items: center;
     font-size: 1.5rem;
 }
+.navbar-light .navbar-brand {
+    color: white;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: white !important;
+  }
 #urls_form{
     text-align: center;
     display: inline-block;
@@ -28,6 +34,14 @@
 .card-title{
     text-align: start;
     margin-left: 1rem;
+}
+#homeButton{
+    background:#263974;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: white;
+    text-decoration: none;
+    margin-top: 1rem;
 }
 main{
     margin: 1em;
