@@ -14,6 +14,7 @@ app.use(cookieSession({
   name: 'session',
   keys: ['myTinyAppWebApp', 'myTinyAppWebApp2']
 }));
+app.use(express.static("public")); 
 
 const urlDatabase = {
   b6UTxQ: {
@@ -47,7 +48,8 @@ const users = {
 
 
 app.get("/", (req, res) => {
-  res.send("Hello!");
+  const templateVars = {user: ''};
+  res.render("home", templateVars);
 });
 
 app.listen(PORT, () => {

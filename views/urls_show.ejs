@@ -3,6 +3,7 @@
 <head>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
   <title>URL Shortener</title>
 </head>
 <header> 
@@ -18,11 +19,11 @@
     <div class="card-footer text-muted"></div>
   </div>
   <!--  <p class="card-text">Short URL: <a href="/u/<%= shortURL %>"><%= shortURL %></a></p> -->    
-      <form class="form-inline" action="/urls/<%= shortURL %>/edit" method="POST", style = "text-align: center; display: inline-block;">
-        <h3 class="card-title" style="text-align: start;margin-left: 1rem;">Update TinyURL</h3>
+      <form id="urls_form" class="form-inline" action="/urls/<%= shortURL %>/edit" method="POST">
+        <h3 class="card-title">Update TinyURL</h3>
         <div class="form group mb-2">
-          <label for="longURL" style="justify-content: start;margin-left: 1rem;">Update your URL:</label>
-          <input class="form-control" type="text" name="longURL" placeholder="<%= longURL %>" style="width: 300px; margin: 1em; text-align: left;">
+          <label for="longURL" id="longURLLabel">Update your URL:</label>
+          <input id="longURL_form_input" class="form-control" type="text" name="longURL" placeholder="<%= longURL %>">
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>
       </form>

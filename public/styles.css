@@ -1,0 +1,60 @@
+#homePage{
+    background-image: linear-gradient(rgba(240, 211, 211, 0.7), rgba(214, 213, 213, 0.7)), url(images/login_background.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+#homeContainer{
+    display: flex;
+    height: 90vh;
+    padding-left: 1rem;
+    align-items: center;
+    font-size: 1.5rem;
+}
+#urls_form{
+    text-align: center;
+    display: inline-block;
+}
+#longURL_form_input{
+    width: 300px;
+    margin: 1em;
+    text-align: left;
+}
+#longURLLabel{
+    justify-content: start;
+    margin-left: 1rem;
+}
+.card-title{
+    text-align: start;
+    margin-left: 1rem;
+}
+main{
+    margin: 1em;
+}
+.form-control{
+    width: 300px;
+}
+thead{
+    background-color: #859de4;
+}
+.btn{
+    background-color: #859de4;
+}
+#deleteBttn{
+    background-color: rgb(233, 85, 110);
+    color: whitesmoke;
+}
+#registerForm, #loginForm{
+    width: 100%;
+    max-width: 350px;
+    margin: 20px;
+}
+
+@media screen and (max-width: 800px){
+    #homeContainer{
+        max-height: 60vh;
+        align-items: center;
+        padding-top: 2rem;
+    }
+}

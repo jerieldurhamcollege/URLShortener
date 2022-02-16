@@ -3,13 +3,14 @@
 <head>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
   <title>URL Shortener</title>
 </head>
 <header> 
   <%- include('partials/_header') %>
 </header>
 
-<form action="/register" method="POST" style="width: 100%;max-width: 350px;margin: 20px;">
+<form action="/register" method="POST" id="registerForm">
   <h1>REGISTER</h1>
   <div class="mb-3">
     <label for="email" class="form-label">Email address</label>
